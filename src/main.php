@@ -20,7 +20,7 @@ function react_component(string $id, array $data = [], array $options = []): str
     $opts = array_merge([
         'ref' => false,
         'component' => null,
-        'path' => env('REACT_BRIDGE_PATH', dirname(__DIR__, 2).'/resources/assets/js'),
+        'path' => env('REACT_BRIDGE_PATH', dirname(__DIR__, 4).'/resources/assets/js'),
         'folder' => env('REACT_BRIDGE_FOLDER', 'components'),
         'filename' => env('REACT_BRIDGE_FILENAME', 'react')
     ], $options);

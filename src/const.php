@@ -9,7 +9,7 @@ namespace ReactBridge;
 
 const ID = "\n//%id%\n";
 
-const IMPORT = "import %component% from '%file_path%;\n";
+const IMPORT = "import %component% from '%file_path%';\n";
 
 const REF = "        props.ref = (ref) => { window._components.%component%Component = ref; };\n";
 
