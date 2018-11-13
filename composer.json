@@ -1,7 +1,7 @@
 {
   "name": "sasab/react-bridge",
-  "description": "A small library for making hybrid apps by integrating React.js into full stack PHP frameworks",
-  "minimum-stability": "dev",
+  "description": "A small library small library that helps you make hybrid by integrating React.js into full stack PHP frameworks",
+  "minimum-stability": "stable",
   "version": "1.0",
   "authors": [
     {
