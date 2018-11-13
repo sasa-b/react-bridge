@@ -19,7 +19,7 @@ All you need to do to integrate React into your favorite full stack MVC project 
 If you are a __Laravel__ user you can start using it out of the box, it uses Laravel's folder structure by default.
 
 The "bundling" `react.js` file will be generated in `/resources/assets/js` and it will look for your React component files 
-in the `/resources/assets/js/components` folder bu default.
+in the `/resources/assets/js/components` folder by default.
 
 This function will detect the environment of your app from the `.env` file, if it is in _production_ it will just
 return the `<div id='my-component' data-props='{"foo":"bar"}'>` file required by React. If it is in development it will write/append to the `react.js` file.
