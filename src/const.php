@@ -5,7 +5,7 @@
  * Date: 11/13/18
  * Time: 8:37 PM
  */
-namespace ReactBridge;
+namespace SasaB\ReactBridge;
 
 const ID = "\n//%id%\n";
 

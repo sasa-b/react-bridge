@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-        "ReactBridge\\": "src/"
+        "SasaB\\ReactBridge\\": "src/"
     },
     "files": ["src/const.php", "src/functions.php", "src/main.php"]
   }

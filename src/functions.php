@@ -6,7 +6,7 @@
  * Time: 12:34 PM
  */
 
-namespace ReactBridge;
+namespace SasaB\ReactBridge;
 
 
 function env(string $key, $default = null)
