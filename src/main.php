@@ -1,11 +1,11 @@
 <?php
 
-use function SasaB\ReactBridge\str_has;
-use function SasaB\ReactBridge\js_code;
-use function SasaB\ReactBridge\html;
-use function SasaB\ReactBridge\is_prod;
-use function SasaB\ReactBridge\env;
-use const SasaB\ReactBridge\BOOT_CODE;
+use function ReactBridge\str_has;
+use function ReactBridge\js_code;
+use function ReactBridge\html;
+use function ReactBridge\is_prod;
+use function ReactBridge\env;
+use const ReactBridge\BOOT_CODE;
 
 /**
  * @param string $id

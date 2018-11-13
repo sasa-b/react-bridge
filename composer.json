@@ -1,5 +1,5 @@
 {
-  "name": "React Bridge",
+  "name": "sasab/react-bridge",
   "description": "A small library for making hybrid apps by integrating React.js into full stack PHP frameworks",
   "minimum-stability": "dev",
   "version": "1.0",
@@ -19,7 +19,7 @@
   },
   "autoload": {
     "psr-4": {
-        "SasaB\\ReactBridge\\": "src/"
+        "ReactBridge\\": "src/"
     },
     "files": ["src/const.php", "src/functions.php", "src/main.php"]
   }
