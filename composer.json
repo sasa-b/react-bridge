@@ -1,0 +1,26 @@
+{
+  "name": "React Bridge",
+  "description": "A small library for making hybrid apps by integrating React.js into full stack PHP frameworks",
+  "minimum-stability": "dev",
+  "version": "1.0",
+  "authors": [
+    {
+      "name": "Sasa Blagojevic",
+      "email": "sasa.blagojevic@mail.com",
+      "homepage": "https://sasablagojevic.com"
+    }
+  ],
+  "keywords": ["library", "react", "react-js", "mvc", "php", "laravel", "symfony", "cakephp"],
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": "^7.1",
+    "vlucas/phpdotenv": "^2.5"
+  },
+  "autoload": {
+    "psr-4": {
+        "ReactBridge\\": "src/"
+    },
+    "files": ["src/const.php", "src/functions.php", "src/main.php"]
+  }
+}
