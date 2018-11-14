@@ -61,11 +61,27 @@ window object `window._components.MyComponent`
 and the function will look into the root of the `../components/` folder for your actual _React.jsx_ component file. 
 
     If you want to provide a custom name or a custom path or both you can provide it as this parameter 
-e.g `react('my-component', $data, ['component' => 'Articles/Comments/SingleComment'])`. 
+e.g.: 
+    ```php
+    react('my-component', $data, ['component' => 'Articles/Comments/SingleComment'])
+    ``` 
 
-    Dot-notation is also supported so you can write it like this as well `react('my-component', $data, ['component' => 'Articles.Comments.SingleComment'])`.
+    Dot-notation is also supported so you can write it like this as well: 
+    ```php
+    react('my-component', $data, ['component' => 'Articles.Comments.SingleComment'])
+    ```
 3. __path__ - base path where your bundling file(s) will be generated
 
 4. __folder__ - folder name inside the __path__ where your React.jsx components will be located
 
 5. __filename__ - name of your bundling file(s)    
+
+### Conventions
+
+The first parameter to the `react_component` expects a _slug_ that will be the _id_ of the element which, as previously noted,
+will be turned into the `StudlyCase` name of the component, e.g.:
+
+`react_component('my-component')`
+
+If the name of the component is actually a folder the function will look for a container component inside of the folder
+`/MyComponent/MyComponentContainer`. You can read more about this React pattern [here](!https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
