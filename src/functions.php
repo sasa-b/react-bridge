@@ -9,6 +9,11 @@
 namespace ReactBridge;
 
 
+/**
+ * @param string $key
+ * @param null $default
+ * @return array|bool|null|string
+ */
 function env(string $key, $default = null)
 {
     $value = getenv($key);
@@ -29,7 +34,7 @@ function env(string $key, $default = null)
             return '';
         case 'null':
         case '(null)':
-            return;
+            return null;
     }
 
     if (strlen($value) > 1 && strpos($value, '"') === 0 && strpos($value, '"') === strlen($value) - 1) {
@@ -39,6 +44,9 @@ function env(string $key, $default = null)
     return $value;
 }
 
+/**
+ * @return bool
+ */
 function is_prod(): bool
 {
     $env = env("APP_ENV", env('REACT_BRIDGE_ENV', 'dev'));
@@ -54,21 +62,40 @@ function is_prod(): bool
     }
 }
 
+/**
+ * @return bool
+ */
 function is_dev(): bool
 {
     return !is_prod();
 }
 
+/**
+ * @param string $str
+ * @return string
+ */
 function studly_case(string $str): string
 {
     return str_replace(' ', '', ucwords(str_replace(['-', '_'], ' ', $str)));
 }
 
+/**
+ * @param string $haystack
+ * @param string $needle
+ * @return bool
+ */
 function str_has(string $haystack, string $needle): bool
 {
     return strpos($haystack, $needle) !== false;
 }
 
+/**
+ * @param string $id
+ * @param string|null $component
+ * @param bool $ref
+ * @param string $folder
+ * @return array
+ */
 function js_code(string $id, string $component = null, bool $ref = false, string $folder = 'components'): array
 {
     $folder = str_replace('/', '', $folder);
@@ -98,6 +125,11 @@ function js_code(string $id, string $component = null, bool $ref = false, string
     return explode('|', $code);
 }
 
+/**
+ * @param string $id
+ * @param array|null $props
+ * @return string
+ */
 function html(string $id, array $props = null): string
 {
     $props = json_encode($props ?: new \stdClass());

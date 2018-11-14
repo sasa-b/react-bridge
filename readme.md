@@ -47,6 +47,7 @@ You can override the defaults by either using the `.env` file or providing the o
 
 .env:
 ```
+REACT_BRIDGE_ENV=
 REACT_BRIDGE_PATH=
 REACT_BRIDGE_FOLDER=
 REACT_BRIDGE_FILENAME=
@@ -84,4 +85,4 @@ will be turned into the `StudlyCase` name of the component, e.g.:
 `react_component('my-component')`
 
 If the name of the component is actually a folder the function will look for a container component inside of the folder
-`/MyComponent/MyComponentContainer`. You can read more about this React pattern [here](!https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+`/MyComponent/MyComponentContainer`. You can read more about this React pattern [here](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
