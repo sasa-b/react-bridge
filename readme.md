@@ -64,12 +64,12 @@ and the function will look into the root of the `../components/` folder for your
     If you want to provide a custom name or a custom path or both you can provide it as this parameter 
 e.g.: 
     ```php
-    react('my-component', $data, ['component' => 'Articles/Comments/SingleComment'])
+    react_component('my-component', $data, ['component' => 'Articles/Comments/SingleComment'])
     ``` 
 
     Dot-notation is also supported so you can write it like this as well: 
     ```php
-    react('my-component', $data, ['component' => 'Articles.Comments.SingleComment'])
+    react_component('my-component', $data, ['component' => 'Articles.Comments.SingleComment'])
     ```
 3. __path__ - base path where your bundling file(s) will be generated
 
