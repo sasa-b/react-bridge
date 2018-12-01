@@ -105,20 +105,20 @@ function js_code(string $id, string $component = null, bool $ref = false, string
         $filePath = "./$folder/$component";
         $component = explode('/', $component);
         $component  = $component[count($component) - 1];
-        $element = studly_case($id);
+        $studlyId = studly_case($id);
     } else {
         $component = studly_case($id);
         $filePath = is_dir("./$folder/$component")
             ? "./$folder/$component/{$component}Container"
             : "./$folder/$component";
-        $element = ucfirst($component);
+        $studlyId = ucfirst($component);
     }
 
-    $element .= 'Element';
+    $ref = $ref ? str_replace('%component%', $studlyId, REF) : '';
 
     $code = str_replace(
         ["%id%", "%element%", "%component%", "%file_path%", "%ref%"],
-        [$id, $element, $component, $filePath, $ref ? str_replace('%component%', $component, REF) : ''],
+        [$id, "{$studlyId}Element", $component, $filePath, $ref],
         ID.'|'.IMPORT.'|'.CODE
     );
 
