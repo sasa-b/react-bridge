@@ -8,18 +8,20 @@ use function ReactBridge\env;
 use const ReactBridge\BOOT_CODE;
 
 /**
- * @param string $id
+ * @param string|array $id
  * @param array $data
  * @param array $options
  * @return string
  */
-function react_component(string $id, array $data = [], array $options = []): string
+function react_component($id, array $data = [], array $options = []): string
 {
+    if (is_array($id)) list($id, $component) = $id;
+
     if (is_prod()) return html($id, $data);
 
     $opts = array_merge([
         'ref' => false,
-        'component' => null,
+        'component' => $component ?? null,
         'path' => env('REACT_BRIDGE_PATH', dirname(__DIR__, 4).'/resources/assets/js'),
         'folder' => env('REACT_BRIDGE_FOLDER', 'components'),
         'filename' => env('REACT_BRIDGE_FILENAME', 'react')
@@ -47,12 +49,12 @@ function react_component(string $id, array $data = [], array $options = []): str
 
 /**
  * @alias react_component
- * @param string $id
+ * @param string|array $id
  * @param array $data
  * @param array $options
  * @return string
  */
-function rc(string $id, array $data = [], array $options = []): string
+function rc($id, array $data = [], array $options = []): string
 {
     return react_component($id, $data, $options);
 }
