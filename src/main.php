@@ -34,7 +34,7 @@ function react_component($id, array $data = [], array $options = []): string
 
         [$comment, $import, $code] = js_code($id, $opts['component'], $opts['ref'], $opts['folder']);
 
-        if (!str_has($file, $id) && !str_has($file, $code)) {
+        if (!str_has($file, "//$id") && !str_has($file, $code)) {
             $write = str_has($file, $import) ? "{$comment}{$code}" : "{$comment}{$import}{$code}";
             file_put_contents($writeTo, $write, FILE_APPEND);
         }
