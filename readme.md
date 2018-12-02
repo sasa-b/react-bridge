@@ -64,12 +64,17 @@ and the function will look into the root of the `../components/` folder for your
     If you want to provide a custom name or a custom path or both you can provide it as this parameter 
 e.g.: 
     ```php
-    react_component('my-component', $data, ['component' => 'Articles/Comments/SingleComment'])
+    react_component('my-component', $data, ['component' => 'Articles/Comments/SingleComment']);
     ``` 
 
     Dot-notation is also supported so you can write it like this as well: 
     ```php
-    react_component('my-component', $data, ['component' => 'Articles.Comments.SingleComment'])
+    react_component('my-component', $data, ['component' => 'Articles.Comments.SingleComment']);
+    ```
+    
+    From `v1.1` first parameter can be an array, so you can provide the `id` and the custom `component` as a list: : 
+    ```php
+        react_component(['my-component', 'Articles.Comments.SingleComment'], $data);
     ```
 3. __path__ - base path where your bundling file(s) will be generated
 
@@ -82,7 +87,7 @@ e.g.:
 The first parameter to the `react_component` expects a _slug_ that will be the _id_ of the element which, as previously noted,
 will be turned into the `StudlyCase` name of the component, e.g.:
 
-`react_component('my-component')`
+`react_component('my-component');`
 
 If the name of the component is actually a folder the function will look for a container component inside of the folder
 `/MyComponent/MyComponentContainer`. You can read more about this React pattern [here](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
