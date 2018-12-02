@@ -2,7 +2,7 @@
   "name": "sasab/react-bridge",
   "description": "A small library small library that helps you make hybrid by integrating React.js into full stack PHP frameworks",
   "minimum-stability": "stable",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "authors": [
     {
       "name": "Sasa Blagojevic",
